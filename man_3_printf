@@ -1,0 +1,61 @@
+%       A %' is written.  No argument is converted.  The complete con-
+             version specification is %%'.
+
+     The decimal point character is defined in the program's locale (category
+     LC_NUMERIC).
+
+     In no case does a non-existent or small field width cause truncation of a
+     numeric field; if the result of a conversion is wider than the field
+     width, the field is expanded to contain the conversion result.
+
+
+EXAMPLES
+     To print a date and time in the form ``Sunday, July 3, 10:02'', where
+     weekday and month are pointers to strings:
+
+           #include <stdio.h>
+           fprintf(stdout, "%s, %s %d, %.2d:%.2d\n",
+                   weekday, month, day, hour, min);
+
+     To print pi to five decimal places:
+
+           #include <math.h>
+           #include <stdio.h>
+           fprintf(stdout, "pi = %.5f\n", 4 * atan(1.0));
+
+     To allocate a 128 byte string and print into it:
+
+           #include <stdio.h>
+           #include <stdlib.h>
+           #include <stdarg.h>
+           char *newfmt(const char *fmt, ...)
+           {
+                   char *p;
+                   va_list ap;
+                   if ((p = malloc(128)) == NULL)
+                           return (NULL);
+                   va_start(ap, fmt);
+                   (void) vsnprintf(p, 128, fmt, ap);
+                   va_end(ap);
+                   return (p);
+           }
+
+ERRORS
+     In addition to the errors documented for the write(2) system call, the
+     printf() family of functions may fail if:
+
+     [EILSEQ]           An invalid wide character code was encountered.
+
+     [ENOMEM]           Insufficient storage space is available.
+
+BUGS
+     The printf family of functions do not correctly handle multibyte charac-
+     ters in the format argument.
+
+SEE ALSO
+     printf(1), printf_l(3),
+
+Compiled by: manpagez.com 
+Edited by:
+Brenda Okonofua
+Kojo Assan
