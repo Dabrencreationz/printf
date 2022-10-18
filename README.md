@@ -1,10 +1,10 @@
-Brenda, [17/10/2022 13:28]
 
-*Printf manual format*
+
+*_Printf manual format*
 
 Name:
 
-printf -- formated output conversion
+_printf -- formated output conversion
 
 Library:
 
@@ -20,7 +20,7 @@ Synopsis:
 
 Int
 
-printf(const char * restrict format, ...);
+_printf(const char * restrict format, ...);
 
 
 
@@ -82,19 +82,9 @@ The format string is composed of zero or more directives: ordinary char-
 
                       output string to a zero.  For x and X conversions, a
 
-                      non-zero result has the string 0x' (or 0X' for X con-
+                      non-zero result has the string 0x' (or 0X' for X conversions) prepended to it.  For a, A, e, E, f, F, g, and G conversions, the result will always contain a decimal point, even if no digits follow it (normally, a decimal point appears in the results of those conversions only
 
-                      versions) prepended to it.  For a, A, e, E, f, F, g, and
-
-                      G conversions, the result will always contain a decimal
-
-                      point, even if no digits follow it (normally, a decimal
-
-                      point appears in the results of those conversions only
-
-                      if a digit follows).  For g and G conversions, trailing zeros are not removed from the result as they would oth-
-
-                      erwise be.
+if a digit follows).  For g and G conversions, trailing zeros are not removed from the result as they would otherwise be.
 
 
 
@@ -136,9 +126,6 @@ The format string is composed of zero or more directives: ordinary char-
 
                       used.
 
-
-
-Brenda, [17/10/2022 13:28]
 
 `''          Decimal conversions (d, u, or i) or the integral portion
 
@@ -286,8 +273,6 @@ Brenda, [17/10/2022 13:28]
 
 
 
-Brenda, [17/10/2022 13:28]
-
 NOTE: The vector length specifiers are extensions to the printf()
 
          specification.  Behaviour of these values for printf() is only
@@ -419,8 +404,6 @@ A field width or precision, or both, may be indicated by an asterisk *'
              is followed by at least one digit.
 
 
-
-Brenda, [17/10/2022 13:28]
 
 aA      The double argument is rounded and converted to hexadecimal nota-
 
@@ -557,9 +540,6 @@ aA      The double argument is rounded and converted to hexadecimal nota-
              argument is converted.
 
 
-
-Brenda, [17/10/2022 13:28]
-
 %       A %' is written.  No argument is converted.  The complete con-
 
              version specification is %%'.
@@ -674,7 +654,7 @@ SEE ALSO
 
 
 
-Compiles by: manpagez.com 
+Compiled by: manpagez.com 
 
 Edited by:
 
